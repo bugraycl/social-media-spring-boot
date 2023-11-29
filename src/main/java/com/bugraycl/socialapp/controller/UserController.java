@@ -12,8 +12,8 @@ public class UserController {
     @GetMapping("/users")
     public List<User> getUsers() {
         List<User> users = new ArrayList<>(); //users adında bir dizi listesi
-        User user1 = new User("buğra","yücel","bycl@gmail.com","123");
-        User user2 = new User("jhon","doe","jhondoe@gmail.com","123");
+        User user1 = new User(1,"buğra","yücel","bycl@gmail.com","123");
+        User user2 = new User(2,"jhon","doe","jhondoe@gmail.com","123");
 
         users.add(user1);
         users.add(user2);
