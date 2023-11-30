@@ -41,4 +41,21 @@ public class UserController {
         return newUser;
     }
 
+    @PutMapping("/users")
+    public User updateUser(@RequestBody User user) {
+        User user1 = new User(1,"buğra","yücel","bycl@gmail.com","123");
+
+        if(user.getFirstName() != null) {
+            user1.setFirstName(user.getFirstName());
+        }
+        if(user.getLastName() != null) {
+            user1.setLastName(user.getLastName());
+        }
+        if(user.getEmail() != null) {
+            user1.setEmail(user.getEmail());
+        }
+
+        return user1;
+    }
+
 }
