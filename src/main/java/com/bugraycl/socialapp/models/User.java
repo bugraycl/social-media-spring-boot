@@ -1,5 +1,6 @@
 package com.bugraycl.socialapp.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -13,6 +14,10 @@ public class User {
     private String lastName;
     private String email;
     private String password;
+
+    public User() {
+        // TODO Auto-generated constructor stub
+    }
 
     public User(Integer id, String firstName, String lastName, String email, String password) { // Constructor
         super();
