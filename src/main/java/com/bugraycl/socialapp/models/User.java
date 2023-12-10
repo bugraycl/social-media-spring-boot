@@ -1,8 +1,6 @@
 package com.bugraycl.socialapp.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +9,7 @@ import java.util.List;
 @Table(name = "users")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String firstName;
     private String lastName;
@@ -20,12 +19,14 @@ public class User {
     private List<Integer> followers = new ArrayList<>();
     private List<Integer> followings = new ArrayList<>();
 
+    private List<Post> savedPost = new ArrayList<>();
+
     public User() {
         // TODO Auto-generated constructor stub
     }
 
     public User(Integer id, String firstName, String lastName, String email, String password, String gender,
-                List<Integer> followers, List<Integer> followings) { // Constructor
+                List<Integer> followers, List<Integer> followings, List<Post> savedPost) { // Constructor
         super();
         this.id = id;
         this.firstName = firstName;
@@ -35,6 +36,7 @@ public class User {
         this.gender = gender;
         this.followers = followers;
         this.followings = followings;
+        this.savedPost = savedPost;
     }
 
     public Integer getId() {
@@ -99,5 +101,13 @@ public class User {
 
     public void setFollowings(List<Integer> followings) {
         this.followings = followings;
+    }
+
+    public List<Post> getSavedPost() {
+        return savedPost;
+    }
+
+    public void setSavedPost(List<Post> savedPost) {
+        this.savedPost = savedPost;
     }
 }
